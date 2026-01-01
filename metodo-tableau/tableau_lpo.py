@@ -163,7 +163,7 @@ def aplica_regras(formula, constantes_no_ramo):
     return []
 
 
-def tableau_semantico(bd_formulas, query):
+def tableau_semantico_lpo(bd_formulas, query):
     formulas = bd_formulas.copy()
 
     # Formata a negação da pergunta corretamente
@@ -245,10 +245,10 @@ print("\n------ Teste: Silogismo de Sócrates ------")
 # Ax(H(x)>M(x), H(socrates) |= M(socrates)
 db1 = ['Ax(H(x)>M(x))', 'H(socrates)']
 q1 = 'M(socrates)'
-tableau_semantico(db1, q1)
+tableau_semantico_lpo(db1, q1)
 
 print("\n------ Teste: Existencial ------")
 # Ex(P(x)), Ax(P(x)>Q(x)) |= Ex(Q(x))
 db2 = ['Ex(P(x))', 'Ax(P(x)>Q(x))']
 q2 = 'Ex(Q(x))'
-tableau_semantico(db2, q2)
+tableau_semantico_lpo(db2, q2)

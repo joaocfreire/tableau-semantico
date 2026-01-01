@@ -76,7 +76,7 @@ def aplica_regras(formula):
 
 
 # Algoritmo Principal
-def tableau_semantico(bd_formulas, query):
+def tableau_semantico_lp(bd_formulas, query):
     # Inicialização do conjunto inicial de fórmulas: fórmulas do BD + negação da pergunta
     formulas = bd_formulas.copy()
     if is_literal(query):
@@ -175,5 +175,5 @@ query = input("\nEntre com uma pergunta: ")
 
 # Resultado do tableau semântico
 print("\nVamos verificar se é Consequência Lógica:")
-resultado = tableau_semantico(database, query)
+resultado = tableau_semantico_lp(database, query)
 print(f"\nResultado Final: {resultado}")
